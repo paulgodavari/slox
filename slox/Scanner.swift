@@ -56,16 +56,20 @@ class Scanner {
             case ">": addToken(type: (match("=") ? .GREATER_EQUAL : .GREATER))
             case "/":
                 if match("/") {
+                    // Consume and ignore comment lines.
                     while peek() != "\n" && !isAtEnd() {
                         _ = advance()
                     }
                 } else {
                     addToken(type: .SLASH)
                 }
+            // Ignore whitespace characters, but count line numbers.
             case " ": break
             case "\r": break
             case "\t": break
             case "\n": line += 1
+                
+            case "\"": string()
             default: Lox.error(line: line, message: "Unexpected character.")
         }
     }
@@ -103,4 +107,26 @@ class Scanner {
         current = source.index(after: current)
         return true
     }
+    
+    func string() {
+        while peek() != "\"" && !isAtEnd() {
+            if peek() == "\n" {
+                line += 1
+            }
+            _ = advance()
+        }
+        
+        if isAtEnd() {
+            Lox.error(line: line, message: "Unterminated string")
+            return
+        }
+        
+        // Closing quote (")
+        _ = advance()
+        
+        let substringRange = source.index(after: start)...source.index(before: current)
+        let value = String(source[substringRange])
+        addToken(type: .STRING, literal: value)
+    }
+    
 }
