@@ -70,7 +70,12 @@ class Scanner {
             case "\n": line += 1
                 
             case "\"": string()
-            default: Lox.error(line: line, message: "Unexpected character.")
+            default:
+                if isDigit(c) {
+                    number()
+                } else {
+                    Lox.error(line: line, message: "Unexpected character.")
+                }
         }
     }
     
@@ -86,6 +91,14 @@ class Scanner {
             return "\0"
         }
         return source[current]
+    }
+    
+    func peekNext() -> Character {
+        let next = source.index(after: current)
+        if next >= source.endIndex {
+            return "\0"
+        }
+        return source[next]
     }
     
     func addToken(type: TokenType) {
@@ -129,4 +142,26 @@ class Scanner {
         addToken(type: .STRING, literal: value)
     }
     
+    func isDigit(_ c: Character) -> Bool {
+        return c >= "0" && c <= "9"
+    }
+    
+    func number() {
+        while isDigit(peek()) {
+            _ = advance()
+        }
+        
+        // Fractional part.
+        if peek() == "." && isDigit(peekNext()) {
+            _ = advance()
+            while isDigit(peek()) {
+                _ = advance()
+            }
+        }
+        
+        let value = String(source[start...current])
+        addToken(type: .NUMBER, literal: Double(value))
+    }
+    
+
 }
