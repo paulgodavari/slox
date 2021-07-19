@@ -22,6 +22,10 @@ class Token {
     }
     
     func toString() -> String {
-        return "\(type) \(lexeme) \(literal ?? "")"
+        var output = "line \(line): type: \(type)\tlexeme: \(lexeme)"
+        if let literalValue = literal {
+            output += "\tliteral: \(literalValue)"
+        }
+        return output
     }
 }

@@ -10,6 +10,25 @@ import Foundation
 
 class Scanner {
  
+    let keywords: [String:TokenType] = [
+        "and":    .AND,
+        "class":  .CLASS,
+        "else":   .ELSE,
+        "false":  .FALSE,
+        "for":    .FOR,
+        "fun":    .FUN,
+        "if":     .IF,
+        "nil":    .NIL,
+        "or":     .OR,
+        "print":  .PRINT,
+        "return": .RETURN,
+        "super":  .SUPER,
+        "this":   .THIS,
+        "true":   .TRUE,
+        "var":    .VAR,
+        "while":  .WHILE
+    ]
+    
     var source: String
     var tokens = [Token]()
     var start: String.Index
@@ -73,6 +92,8 @@ class Scanner {
             default:
                 if isDigit(c) {
                     number()
+                } else if isAlpha(c) {
+                    identifier()
                 } else {
                     Lox.error(line: line, message: "Unexpected character.")
                 }
@@ -137,13 +158,21 @@ class Scanner {
         // Closing quote (")
         _ = advance()
         
-        let substringRange = source.index(after: start)...source.index(before: current)
+        let substringRange = source.index(after: start)..<source.index(before: current)
         let value = String(source[substringRange])
         addToken(type: .STRING, literal: value)
     }
     
     func isDigit(_ c: Character) -> Bool {
         return c >= "0" && c <= "9"
+    }
+    
+    func isAlpha(_ c: Character) -> Bool {
+        return (c >= "a" && c <= "z") || (c >= "A" && c <= "Z") || c == "_"
+    }
+    
+    func isAlphaNumeric(_ c: Character) -> Bool {
+        return isAlpha(c) || isDigit(c)
     }
     
     func number() {
@@ -162,6 +191,18 @@ class Scanner {
         let value = String(source[start...current])
         addToken(type: .NUMBER, literal: Double(value))
     }
-    
+
+    func identifier() {
+        while isAlphaNumeric(peek()) {
+            _ = advance()
+        }
+        
+        let text = String(source[start..<current])
+        var type: TokenType = .IDENTIFIER
+        if let keywordType = keywords[text] {
+            type = keywordType
+        }
+        addToken(type: type)
+    }
 
 }

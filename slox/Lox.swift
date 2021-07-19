@@ -39,7 +39,12 @@ class Lox {
 
     static func run(_ source: String) {
         Logger.log()
-        print("***\n\(source)\n***\n")
+        // print("***\n\(source)\n***\n")
+        let scanner = Scanner(source: source)
+        let tokens = scanner.scanTokens()
+        for token in tokens {
+            print(token.toString())
+        }
     }
 
     static func error(line: Int, message: String) {
