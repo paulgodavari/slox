@@ -6,6 +6,7 @@
 
 
 import Foundation
+import DebugLog
 
 
 Logger.log("slox starting")

@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6644537D269F9B44006E308A /* Lox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6644537C269F9B44006E308A /* Lox.swift */; };
+		6658D69526D0632D00C79C8B /* DebugLog in Frameworks */ = {isa = PBXBuildFile; productRef = 6658D69426D0632D00C79C8B /* DebugLog */; };
 		66D7DE2C26A6374D00EE8426 /* Input.lox in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66D7DE2B26A636B100EE8426 /* Input.lox */; };
-		66F18A7825D49A3400D106AB /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F18A7725D49A3400D106AB /* DebugLog.swift */; };
+		66D7DE2E26A8D0D900EE8426 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D7DE2D26A8D0D900EE8426 /* Expression.swift */; };
 		66F18A7B25D49A3C00D106AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F18A7A25D49A3C00D106AB /* main.swift */; };
 		66F18A7F25D49A5900D106AB /* Test.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66F18A7E25D49A5100D106AB /* Test.txt */; };
 		66F18A8225D4A0D900D106AB /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F18A8125D4A0D900D106AB /* TokenType.swift */; };
@@ -36,8 +37,8 @@
 		6644537E269F9D58006E308A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6644537F269F9D5E006E308A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		66D7DE2B26A636B100EE8426 /* Input.lox */ = {isa = PBXFileReference; lastKnownFileType = text; name = Input.lox; path = slox/test/Input.lox; sourceTree = "<group>"; };
+		66D7DE2D26A8D0D900EE8426 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = slox/Expression.swift; sourceTree = "<group>"; };
 		66F18A5C25D352CE00D106AB /* slox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = slox; sourceTree = BUILT_PRODUCTS_DIR; };
-		66F18A7725D49A3400D106AB /* DebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DebugLog.swift; path = slox/DebugLog.swift; sourceTree = "<group>"; };
 		66F18A7A25D49A3C00D106AB /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = slox/main.swift; sourceTree = "<group>"; };
 		66F18A7E25D49A5100D106AB /* Test.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = Test.txt; path = slox/test/Test.txt; sourceTree = "<group>"; };
 		66F18A8125D4A0D900D106AB /* TokenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TokenType.swift; path = slox/TokenType.swift; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6658D69526D0632D00C79C8B /* DebugLog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,11 +80,11 @@
 		66F18A7625D499A700D106AB /* slox */ = {
 			isa = PBXGroup;
 			children = (
-				66F18A7725D49A3400D106AB /* DebugLog.swift */,
 				66F18A7A25D49A3C00D106AB /* main.swift */,
 				6644537C269F9B44006E308A /* Lox.swift */,
 				66F18A8825D4A5EA00D106AB /* Scanner.swift */,
 				66F18A8525D4A2A900D106AB /* Token.swift */,
+				66D7DE2D26A8D0D900EE8426 /* Expression.swift */,
 				66F18A8125D4A0D900D106AB /* TokenType.swift */,
 			);
 			name = slox;
@@ -113,6 +115,9 @@
 			dependencies = (
 			);
 			name = slox;
+			packageProductDependencies = (
+				6658D69426D0632D00C79C8B /* DebugLog */,
+			);
 			productName = lox;
 			productReference = 66F18A5C25D352CE00D106AB /* slox */;
 			productType = "com.apple.product-type.tool";
@@ -140,6 +145,9 @@
 				Base,
 			);
 			mainGroup = 66F18A5325D352CE00D106AB;
+			packageReferences = (
+				6658D69326D0632D00C79C8B /* XCRemoteSwiftPackageReference "DebugLog" */,
+			);
 			productRefGroup = 66F18A5D25D352CE00D106AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -156,9 +164,9 @@
 			files = (
 				66F18A7B25D49A3C00D106AB /* main.swift in Sources */,
 				66F18A8225D4A0D900D106AB /* TokenType.swift in Sources */,
-				66F18A7825D49A3400D106AB /* DebugLog.swift in Sources */,
 				66F18A8925D4A5EA00D106AB /* Scanner.swift in Sources */,
 				66F18A8625D4A2A900D106AB /* Token.swift in Sources */,
+				66D7DE2E26A8D0D900EE8426 /* Expression.swift in Sources */,
 				6644537D269F9B44006E308A /* Lox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6658D69326D0632D00C79C8B /* XCRemoteSwiftPackageReference "DebugLog" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/paulgodavari/DebugLog.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6658D69426D0632D00C79C8B /* DebugLog */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6658D69326D0632D00C79C8B /* XCRemoteSwiftPackageReference "DebugLog" */;
+			productName = DebugLog;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 66F18A5425D352CE00D106AB /* Project object */;
 }

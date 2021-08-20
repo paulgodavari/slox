@@ -6,6 +6,7 @@
 
 
 import Foundation
+import DebugLog
 
 
 class Lox {
