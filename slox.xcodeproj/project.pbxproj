@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6644537D269F9B44006E308A /* Lox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6644537C269F9B44006E308A /* Lox.swift */; };
 		6658D69526D0632D00C79C8B /* DebugLog in Frameworks */ = {isa = PBXBuildFile; productRef = 6658D69426D0632D00C79C8B /* DebugLog */; };
+		6673C27629F991BF00F5A343 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673C27529F991BF00F5A343 /* main.swift */; };
+		6673C27C29F9929900F5A343 /* DebugLog in Frameworks */ = {isa = PBXBuildFile; productRef = 6673C27B29F9929900F5A343 /* DebugLog */; };
 		66D7DE2C26A6374D00EE8426 /* Input.lox in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66D7DE2B26A636B100EE8426 /* Input.lox */; };
 		66D7DE2E26A8D0D900EE8426 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D7DE2D26A8D0D900EE8426 /* Expression.swift */; };
 		66F18A7B25D49A3C00D106AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F18A7A25D49A3C00D106AB /* main.swift */; };
@@ -19,6 +21,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6673C27129F991BF00F5A343 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		66F18A5A25D352CE00D106AB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -36,6 +47,8 @@
 		6644537C269F9B44006E308A /* Lox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Lox.swift; path = slox/Lox.swift; sourceTree = "<group>"; };
 		6644537E269F9D58006E308A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6644537F269F9D5E006E308A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		6673C27329F991BF00F5A343 /* GenerateAst */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GenerateAst; sourceTree = BUILT_PRODUCTS_DIR; };
+		6673C27529F991BF00F5A343 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		66D7DE2B26A636B100EE8426 /* Input.lox */ = {isa = PBXFileReference; lastKnownFileType = text; name = Input.lox; path = slox/test/Input.lox; sourceTree = "<group>"; };
 		66D7DE2D26A8D0D900EE8426 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = slox/Expression.swift; sourceTree = "<group>"; };
 		66F18A5C25D352CE00D106AB /* slox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = slox; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +60,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6673C27029F991BF00F5A343 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6673C27C29F9929900F5A343 /* DebugLog in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66F18A5925D352CE00D106AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,6 +79,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6673C27429F991BF00F5A343 /* GenerateAst */ = {
+			isa = PBXGroup;
+			children = (
+				6673C27529F991BF00F5A343 /* main.swift */,
+			);
+			path = GenerateAst;
+			sourceTree = "<group>";
+		};
+		6673C27A29F9929900F5A343 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		66F18A5325D352CE00D106AB = {
 			isa = PBXGroup;
 			children = (
@@ -65,7 +101,9 @@
 				6644537F269F9D5E006E308A /* LICENSE */,
 				66F18A7D25D49A4700D106AB /* Test */,
 				66F18A7625D499A700D106AB /* slox */,
+				6673C27429F991BF00F5A343 /* GenerateAst */,
 				66F18A5D25D352CE00D106AB /* Products */,
+				6673C27A29F9929900F5A343 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				66F18A5C25D352CE00D106AB /* slox */,
+				6673C27329F991BF00F5A343 /* GenerateAst */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,6 +141,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6673C27229F991BF00F5A343 /* GenerateAst */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6673C27729F991BF00F5A343 /* Build configuration list for PBXNativeTarget "GenerateAst" */;
+			buildPhases = (
+				6673C26F29F991BF00F5A343 /* Sources */,
+				6673C27029F991BF00F5A343 /* Frameworks */,
+				6673C27129F991BF00F5A343 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GenerateAst;
+			packageProductDependencies = (
+				6673C27B29F9929900F5A343 /* DebugLog */,
+			);
+			productName = GenerateAst;
+			productReference = 6673C27329F991BF00F5A343 /* GenerateAst */;
+			productType = "com.apple.product-type.tool";
+		};
 		66F18A5B25D352CE00D106AB /* slox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 66F18A6325D352CE00D106AB /* Build configuration list for PBXNativeTarget "slox" */;
@@ -128,10 +187,13 @@
 		66F18A5425D352CE00D106AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Paul Godavari";
 				TargetAttributes = {
+					6673C27229F991BF00F5A343 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					66F18A5B25D352CE00D106AB = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -154,11 +216,20 @@
 			projectRoot = "";
 			targets = (
 				66F18A5B25D352CE00D106AB /* slox */,
+				6673C27229F991BF00F5A343 /* GenerateAst */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6673C26F29F991BF00F5A343 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6673C27629F991BF00F5A343 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		66F18A5825D352CE00D106AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +246,32 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		6673C27829F991BF00F5A343 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Y2NLZZ54A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6673C27929F991BF00F5A343 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7Y2NLZZ54A;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		66F18A6125D352CE00D106AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,6 +412,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6673C27729F991BF00F5A343 /* Build configuration list for PBXNativeTarget "GenerateAst" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6673C27829F991BF00F5A343 /* Debug */,
+				6673C27929F991BF00F5A343 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		66F18A5725D352CE00D106AB /* Build configuration list for PBXProject "slox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -348,6 +454,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		6658D69426D0632D00C79C8B /* DebugLog */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6658D69326D0632D00C79C8B /* XCRemoteSwiftPackageReference "DebugLog" */;
+			productName = DebugLog;
+		};
+		6673C27B29F9929900F5A343 /* DebugLog */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6658D69326D0632D00C79C8B /* XCRemoteSwiftPackageReference "DebugLog" */;
 			productName = DebugLog;
