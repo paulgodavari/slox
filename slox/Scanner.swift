@@ -73,6 +73,7 @@ class Scanner {
             case "=": addToken(type: (match("=") ? .EQUAL_EQUAL : .EQUAL))
             case "<": addToken(type: (match("=") ? .LESS_EQUAL : .LESS))
             case ">": addToken(type: (match("=") ? .GREATER_EQUAL : .GREATER))
+            
             case "/":
                 if match("/") {
                     // Consume and ignore comment lines.
@@ -82,6 +83,7 @@ class Scanner {
                 } else {
                     addToken(type: .SLASH)
                 }
+            
             // Ignore whitespace characters, but count line numbers.
             case " ": break
             case "\r": break
@@ -89,6 +91,7 @@ class Scanner {
             case "\n": line += 1
                 
             case "\"": string()
+
             default:
                 if isDigit(c) {
                     number()
