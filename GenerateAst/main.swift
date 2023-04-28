@@ -117,8 +117,6 @@ func defineAst(_ baseClassName: String, types: [String]) {
 
 Logger.log("GenerateAst starting")
 
-// testVisitor()
-
 if CommandLine.arguments.count == 2 {
     defineAst("Expr", types: [
         "Binary   : Expr left, Token oper, Expr right",

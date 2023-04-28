@@ -59,9 +59,9 @@ class Grouping: Expr {
 
 
 class Literal: Expr {
-    var value: Any
+    var value: Any?
 
-    init(value: Any) {
+    init(value: Any?) {
         self.value = value
     }
 

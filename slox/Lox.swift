@@ -39,12 +39,17 @@ class Lox {
     }
 
     static func run(_ source: String) {
-        Logger.log()
+        Logger.log("---- Scanning ----")
         // print("***\n\(source)\n***\n")
         let scanner = Scanner(source: source)
         let tokens = scanner.scanTokens()
         for token in tokens {
             print(token.toString())
+        }
+        Logger.log("---- Parsing ----")
+        let parser = Parser(tokens: tokens)
+        if let expression = parser.parse() {
+            print(AstPrinter().print(expr: expression))
         }
     }
 
@@ -57,4 +62,12 @@ class Lox {
         hadError = true
     }
     
+    static func error(token: Token, message: String){
+        if token.type == .EOF {
+            report(line: token.line, location: " at end", message: message)
+        } else {
+            report(line: token.line, location: " at '" + token.lexeme + "'", message: message)
+        }
+    }
+
 }

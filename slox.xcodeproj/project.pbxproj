@@ -15,6 +15,9 @@
 		6673C2BB29FB02BF00F5A343 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F18A8525D4A2A900D106AB /* Token.swift */; };
 		6673C2BC29FB02BF00F5A343 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D7DE2D26A8D0D900EE8426 /* Expression.swift */; };
 		6673C2BD29FB02D700F5A343 /* TokenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F18A8125D4A0D900D106AB /* TokenType.swift */; };
+		6673C2DD29FBF15200F5A343 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673C2DC29FBF15200F5A343 /* Parser.swift */; };
+		6673C2EF29FC7F5300F5A343 /* AstPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673C2EE29FC7F5300F5A343 /* AstPrinter.swift */; };
+		6673C2F029FC7F5300F5A343 /* AstPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673C2EE29FC7F5300F5A343 /* AstPrinter.swift */; };
 		66D7DE2C26A6374D00EE8426 /* Input.lox in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66D7DE2B26A636B100EE8426 /* Input.lox */; };
 		66D7DE2E26A8D0D900EE8426 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D7DE2D26A8D0D900EE8426 /* Expression.swift */; };
 		66F18A7B25D49A3C00D106AB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F18A7A25D49A3C00D106AB /* main.swift */; };
@@ -55,6 +58,8 @@
 		6673C27529F991BF00F5A343 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		6673C2B429FB021800F5A343 /* AstTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6673C2B629FB021900F5A343 /* AstTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstTest.swift; sourceTree = "<group>"; };
+		6673C2DC29FBF15200F5A343 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = slox/Parser.swift; sourceTree = "<group>"; };
+		6673C2EE29FC7F5300F5A343 /* AstPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AstPrinter.swift; path = slox/AstPrinter.swift; sourceTree = "<group>"; };
 		66D7DE2B26A636B100EE8426 /* Input.lox */ = {isa = PBXFileReference; lastKnownFileType = text; name = Input.lox; path = slox/test/Input.lox; sourceTree = "<group>"; };
 		66D7DE2D26A8D0D900EE8426 /* Expression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = slox/Expression.swift; sourceTree = "<group>"; };
 		66F18A5C25D352CE00D106AB /* slox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = slox; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,10 +149,12 @@
 			children = (
 				66F18A7A25D49A3C00D106AB /* main.swift */,
 				6644537C269F9B44006E308A /* Lox.swift */,
+				6673C2DC29FBF15200F5A343 /* Parser.swift */,
 				66F18A8825D4A5EA00D106AB /* Scanner.swift */,
 				66F18A8525D4A2A900D106AB /* Token.swift */,
 				66D7DE2D26A8D0D900EE8426 /* Expression.swift */,
 				66F18A8125D4A0D900D106AB /* TokenType.swift */,
+				6673C2EE29FC7F5300F5A343 /* AstPrinter.swift */,
 			);
 			name = slox;
 			sourceTree = "<group>";
@@ -290,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6673C2BD29FB02D700F5A343 /* TokenType.swift in Sources */,
+				6673C2F029FC7F5300F5A343 /* AstPrinter.swift in Sources */,
 				6673C2BB29FB02BF00F5A343 /* Token.swift in Sources */,
 				6673C2BC29FB02BF00F5A343 /* Expression.swift in Sources */,
 				6673C2B729FB021900F5A343 /* AstTest.swift in Sources */,
@@ -306,6 +314,8 @@
 				66F18A8625D4A2A900D106AB /* Token.swift in Sources */,
 				66D7DE2E26A8D0D900EE8426 /* Expression.swift in Sources */,
 				6644537D269F9B44006E308A /* Lox.swift in Sources */,
+				6673C2DD29FBF15200F5A343 /* Parser.swift in Sources */,
+				6673C2EF29FC7F5300F5A343 /* AstPrinter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
