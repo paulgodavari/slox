@@ -148,13 +148,13 @@
 			isa = PBXGroup;
 			children = (
 				66F18A7A25D49A3C00D106AB /* main.swift */,
+				6673C2EE29FC7F5300F5A343 /* AstPrinter.swift */,
+				66D7DE2D26A8D0D900EE8426 /* Expression.swift */,
 				6644537C269F9B44006E308A /* Lox.swift */,
 				6673C2DC29FBF15200F5A343 /* Parser.swift */,
 				66F18A8825D4A5EA00D106AB /* Scanner.swift */,
 				66F18A8525D4A2A900D106AB /* Token.swift */,
-				66D7DE2D26A8D0D900EE8426 /* Expression.swift */,
 				66F18A8125D4A0D900D106AB /* TokenType.swift */,
-				6673C2EE29FC7F5300F5A343 /* AstPrinter.swift */,
 			);
 			name = slox;
 			sourceTree = "<group>";
