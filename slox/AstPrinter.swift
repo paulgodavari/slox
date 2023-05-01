@@ -48,6 +48,9 @@ class AstPrinter: Visitor {
         if let value = expr.value as? Int {
             return String(value)
         }
+        if let value = expr.value as? Bool {
+            return value ? "true" : "false"
+        }
         return ""
     }
 

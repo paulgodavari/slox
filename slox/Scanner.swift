@@ -191,7 +191,7 @@ class Scanner {
             }
         }
         
-        let value = String(source[start...current])
+        let value = String(source[start..<current])
         addToken(type: .NUMBER, literal: Double(value))
     }
 
